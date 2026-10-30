@@ -10,6 +10,7 @@ const cardsContainer = document.getElementById("cards");
 const statusMessage = document.getElementById("status");
 
 // CHECKPOINT 2: When the Load Friends button is clicked, run loadFriends.
+loadButton.addEventListener("click", loadFriends);
 
 
 // -------------------------------------------------------------
@@ -39,6 +40,28 @@ function loadFriends() {
   //       showDataError(error);
   //     }
 
+  const request = new XMLHttpRequest();
+
+  request.open("GET", "friends.json");
+
+  request.onload = function () {
+    if (request.status === 200) {
+      try {
+        const friends = JSON.parse(request.responseText);
+        renderFriends(friends);
+      } catch (error) {
+        showDataError(error);
+      }
+    } else {
+      showLoadError();
+    }
+  };
+
+  request.onerror = function () {
+    showLoadError();
+  };
+
+  request.send();
 }
 
 
@@ -64,6 +87,24 @@ function renderFriends(friends) {
   </div>
   */
 
+  let cardsHTML = "";
+
+  for (const friend of friends) {
+    cardsHTML += `
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title h4">${friend.name}</h2>
+            <p class="relationship">${friend.relationship}</p>
+            <p>${friend.details}</p>
+            <p class="hobbies"><strong>Hobbies:</strong> ${friend.hobbies.join(", ")}</p>
+          </div>
+        </article>
+      </div>
+    `;
+  }
+
+  cardsContainer.innerHTML = cardsHTML;
 
   // Supplied success message. Keep this after the cards are updated.
   statusMessage.classList.remove("error");
