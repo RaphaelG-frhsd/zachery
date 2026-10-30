@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Allen LaRock",
+        "relationship": "God Father",
+        "details": "Ethan LaRock's father who is the goat btw",
+        "hobbies": ["Law, injuring people, raising me and Ethan"]
+    },
+    {
+        "name": "Zarchery Weissman",
+        "relationship": "Twix",
+        "details": "Freshman day 1 and his baby is all chrome no ganic",
+        "hobbies": ["Chromming up, twix, and gaming"]
+    },
+    {
+        "name": "Anthony Felice",
+        "relationship": "Friend",
+        "details": "My friend in web design",
+        "hobbies": ["Web design, coding, and twix"]
+    },
+    {
+        "name": "Ethan LaRock",
+        "relationship": "Allen's Son",
+        "details": "Allen LaRock's son and the goat's successor",
+        "hobbies": ["Soccer, hanging out, and being Allen's son"]
+    }
+    ,
+    {
+    "name": "Kanye West",
+    "relationship": "Musical Genius",
+    "details": "Made Graduation and somehow became a completely different person",
+    "hobbies": ["Making music, fashion, and being controversial"]
+    },
+    {
+    "name": "Ye",
+    "relationship": "Kanye's Alternate Universe",
+    "details": "Kanye West if you loaded a different save file",
+    "hobbies": ["Making music, fashion, and confusing everyone"]
+    }
+
+]
